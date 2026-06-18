@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 72" role="img" aria-labelledby="title desc">
+  <title id="title">Flutter wordmark</title>
+  <desc id="desc">Simple local wordmark for Flutter.</desc>
+  <rect width="240" height="72" rx="18" fill="#0f172a"/>
+  <path d="m46 18 18 18-18 18h15l18-18-18-18Zm23 0h15l18 18-18 18H69l18-18Z" fill="#4fc3f7"/>
+  <path d="M118 22h16v6h-9v4h8v6h-8v12h-7zm21 0h8l6 10 6-10h8l-10 16 11 16h-8l-7-10-7 10h-8l11-16zm34 0h7v32h-7zm14 0h7l11 18V22h7v32h-7l-11-18v18h-7z" fill="#fff"/>
+</svg>

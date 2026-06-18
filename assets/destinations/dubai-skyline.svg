@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Dubai skyline illustration</title>
+  <desc id="desc">A modern skyline with a tall spire and waterfront inspired by Dubai.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60d8ff"/>
+      <stop offset="54%" stop-color="#a6efff"/>
+      <stop offset="100%" stop-color="#ffe1b8"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2e90c8"/>
+      <stop offset="100%" stop-color="#16506d"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <circle cx="645" cy="98" r="45" fill="#fff5bf" opacity="0.92"/>
+  <rect y="336" width="800" height="164" fill="url(#water)"/>
+  <path d="M0 410c142-34 249-34 352 0s215 34 448-3v93H0Z" fill="#dfc296"/>
+  <path d="M142 232h36v105h-36zM186 206h44v131h-44zM244 186h52v151h-52zM315 150h28v187h-28zM366 80h14l18 257h-50ZM416 172h56v165h-56zM488 193h42v144h-42zM540 214h51v123h-51zM603 176h34v161h-34z" fill="#174b63"/>
+  <path d="M372 81l16-51 12 51Z" fill="#174b63"/>
+  <path d="M100 364c64 8 125 8 190 0" fill="none" stroke="#d6f3ff" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+  <path d="M450 383c56 8 112 8 168 0" fill="none" stroke="#d6f3ff" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+</svg>

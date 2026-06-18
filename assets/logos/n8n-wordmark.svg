@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 72" role="img" aria-labelledby="title desc">
+  <title id="title">n8n wordmark</title>
+  <desc id="desc">Simple local wordmark for n8n automation.</desc>
+  <rect width="240" height="72" rx="18" fill="#f97316"/>
+  <g fill="#fff">
+    <circle cx="46" cy="36" r="10"/>
+    <circle cx="82" cy="24" r="10"/>
+    <circle cx="82" cy="48" r="10"/>
+    <circle cx="118" cy="36" r="10"/>
+    <path d="M46 32h26l11-8h25l10 8" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M46 40h26l11 8h25l10-8" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M150 24h12l14 17V24h12v24h-12l-14-17v17h-12zm48 0h12v24h-12z"/>
+  </g>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Goa coastline illustration</title>
+  <desc id="desc">A warm sunset beach scene with palms and sea inspired by Goa.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffb078"/>
+      <stop offset="58%" stop-color="#ff7c67"/>
+      <stop offset="100%" stop-color="#ffd7b0"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f5c91"/>
+      <stop offset="100%" stop-color="#163f66"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <circle cx="650" cy="110" r="54" fill="#ffe8a6" opacity="0.88"/>
+  <rect y="250" width="800" height="250" fill="url(#sea)"/>
+  <path d="M0 348C110 320 190 330 300 346S515 382 630 370 742 338 800 322V500H0Z" fill="#f5d3a0"/>
+  <path d="M0 276C95 259 176 260 257 279s168 42 250 37 189-36 293-61v143H0Z" fill="#3a81aa" opacity="0.4"/>
+  <path d="M148 240h18v178h-18z" fill="#664027"/>
+  <path d="M156 248c14-55 50-86 103-92-28 27-48 54-57 95Z" fill="#0b4336"/>
+  <path d="M160 255c4-62-18-112-62-145 8 39 12 70 18 103Z" fill="#0d5643"/>
+  <path d="M160 252c33-40 77-57 139-51-44 20-74 37-102 76Z" fill="#13634d"/>
+  <path d="M101 292h94l24-38h70v73H101Z" fill="#855136"/>
+  <path d="M90 294l71-55 73 55Z" fill="#d27647"/>
+  <path d="M363 390c39 4 73 4 113 0" fill="none" stroke="#fff6da" stroke-width="5" stroke-linecap="round" opacity="0.72"/>
+  <path d="M452 412c43 5 84 5 129 0" fill="none" stroke="#fff6da" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+  <path d="M540 429c34 4 64 4 97 0" fill="none" stroke="#fff6da" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+</svg>

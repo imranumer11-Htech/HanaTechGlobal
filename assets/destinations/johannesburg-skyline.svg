@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Johannesburg skyline illustration</title>
+  <desc id="desc">A warm skyline with a distinctive tower and elevated terrain inspired by Johannesburg.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9a788"/>
+      <stop offset="58%" stop-color="#ffd3b4"/>
+      <stop offset="100%" stop-color="#fff0d6"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a24a38"/>
+      <stop offset="100%" stop-color="#6c2b20"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <circle cx="646" cy="106" r="50" fill="#fff1be" opacity="0.85"/>
+  <path d="M0 323c122 25 251 23 351-10s173-62 254-60 123 9 195 22v225H0Z" fill="url(#ground)"/>
+  <path d="M151 220h51v108h-51zM215 191h60v137h-60zM292 172h42v156h-42zM348 155h50v173h-50zM414 212h57v116h-57zM489 189h44v139h-44zM549 205h64v123h-64z" fill="#4d2020"/>
+  <rect x="640" y="134" width="22" height="194" fill="#4d2020"/>
+  <ellipse cx="651" cy="126" rx="40" ry="22" fill="#4d2020"/>
+  <path d="M53 386c58 9 113 9 171 0m465 13c34 5 68 5 102 0" fill="none" stroke="#efb290" stroke-width="5" stroke-linecap="round" opacity="0.45"/>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">London riverside illustration</title>
+  <desc id="desc">A river scene with bridge towers and skyline inspired by London.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd35a"/>
+      <stop offset="55%" stop-color="#ffc981"/>
+      <stop offset="100%" stop-color="#fff1de"/>
+    </linearGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#517ea7"/>
+      <stop offset="100%" stop-color="#28445f"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <circle cx="646" cy="98" r="42" fill="#fff3bf" opacity="0.92"/>
+  <rect y="340" width="800" height="160" fill="url(#river)"/>
+  <path d="M0 402c108-21 204-21 312 4s209 34 488-5v99H0Z" fill="#9b6b43"/>
+  <path d="M200 178h63v160h-63zM431 178h63v160h-63z" fill="#6b4a37"/>
+  <path d="M180 196h103v18H180zm231 0h103v18H411z" fill="#7f5b44"/>
+  <path d="M257 244h180l36 57H221Z" fill="#456d8d"/>
+  <path d="M213 258h60m160 0h60" fill="none" stroke="#d5ebf8" stroke-width="5" stroke-linecap="round" opacity="0.75"/>
+  <path d="M562 206c0-44 36-80 80-80-18 15-31 37-31 80s13 64 31 80c-44 0-80-36-80-80Z" fill="#6b4a37"/>
+  <path d="M118 211h43v127h-43zM524 220h27v118h-27z" fill="#70503b"/>
+  <path d="M100 373c77 8 154 8 231 0m372 11c23 3 46 3 69 0" fill="none" stroke="#d6edf8" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Chennai shoreline illustration</title>
+  <desc id="desc">A bright coastal skyline with a lighthouse and sea inspired by Chennai.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#69d3ff"/>
+      <stop offset="60%" stop-color="#bceeff"/>
+      <stop offset="100%" stop-color="#fdf3d0"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1795c9"/>
+      <stop offset="100%" stop-color="#10587d"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <circle cx="622" cy="95" r="46" fill="#fff3b4" opacity="0.95"/>
+  <rect y="248" width="800" height="252" fill="url(#sea)"/>
+  <path d="M0 349c108-29 213-26 321 8s223 64 479 45v98H0Z" fill="#ead4a0"/>
+  <path d="M125 238h46v124h-46z" fill="#f7f4ec"/>
+  <path d="M140 194h16v168h-16z" fill="#ef6b55"/>
+  <path d="M146 164h4v44h-4z" fill="#d84937"/>
+  <path d="M150 164h80L191 220h-41Z" fill="#8b523b"/>
+  <path d="M224 220h29v124h-29z" fill="#cda77b"/>
+  <path d="M303 232h40v82h-40z" fill="#588198"/>
+  <path d="M354 218h55v96h-55z" fill="#4c7087"/>
+  <path d="M424 205h40v109h-40z" fill="#3f617a"/>
+  <path d="M0 291c88-20 167-17 260 10 92 27 192 50 310 31s162-48 230-75" fill="none" stroke="#e7fbff" stroke-width="9" opacity="0.45"/>
+  <path d="M311 397c42 5 80 5 122 0" fill="none" stroke="#fff5dc" stroke-width="4" stroke-linecap="round" opacity="0.72"/>
+  <path d="M436 418c44 5 88 5 132 0" fill="none" stroke="#fff5dc" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+</svg>

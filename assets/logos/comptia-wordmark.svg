@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" role="img" aria-label="CompTIA logo">
+  <circle cx="24" cy="28" r="16" fill="none" stroke="#0b2e6d" stroke-width="6"/>
+  <path d="M16 28h16" stroke="#0b2e6d" stroke-width="6" stroke-linecap="round"/>
+  <text x="50" y="37" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#0b2e6d">CompTIA</text>
+</svg>

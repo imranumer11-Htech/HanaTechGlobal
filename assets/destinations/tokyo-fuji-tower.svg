@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Tokyo skyline illustration</title>
+  <desc id="desc">A skyline with a red broadcast tower and Mount Fuji inspired by Tokyo.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cab8ff"/>
+      <stop offset="55%" stop-color="#e0d7ff"/>
+      <stop offset="100%" stop-color="#fff0e8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <circle cx="640" cy="98" r="44" fill="#fff1c1" opacity="0.92"/>
+  <path d="M0 356c133 9 220-3 310-65 91-62 158-67 276-15 118 53 140 58 214 53v171H0Z" fill="#7f8db8"/>
+  <path d="M188 336 325 178 464 336Z" fill="#d8deef"/>
+  <path d="M271 236 325 178l56 58Z" fill="#f7fbff"/>
+  <path d="M114 226h57v111h-57zM183 204h39v133h-39zM477 205h54v132h-54zM548 185h44v152h-44zM605 217h59v120h-59z" fill="#36476b"/>
+  <path d="M379 116h18v221h-18z" fill="#d6473f"/>
+  <path d="M349 286h77l-39-136Z" fill="#d6473f"/>
+  <path d="M358 218h57m-50 34h43m-35 34h28" fill="none" stroke="#fff2d8" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+  <path d="M95 390c67 6 135 6 202 0m332 13c36 5 72 5 108 0" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.45"/>
+</svg>

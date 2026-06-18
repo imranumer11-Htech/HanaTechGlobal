@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Bangalore skyline illustration</title>
+  <desc id="desc">A green cityscape with modern glass towers and tree cover inspired by Bangalore.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#84e7c7"/>
+      <stop offset="55%" stop-color="#c6ffe9"/>
+      <stop offset="100%" stop-color="#effcf5"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f6d57"/>
+      <stop offset="100%" stop-color="#10483f"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <circle cx="620" cy="96" r="48" fill="#fff5c1" opacity="0.9"/>
+  <path d="M0 335c76-13 150-22 234-7s140 34 237 33 196-29 329-43v182H0Z" fill="url(#ground)"/>
+  <path d="M150 199h80v132h-80z" fill="#336f80"/>
+  <path d="M246 165h92v166h-92z" fill="#2f5b73"/>
+  <path d="M356 188h67v143h-67z" fill="#417893"/>
+  <path d="M438 151h103v180h-103z" fill="#2c5366"/>
+  <path d="M560 176h74v155h-74z" fill="#3f738c"/>
+  <path d="M170 217h40m-40 26h40m-40 26h40m94-63h46m-46 28h46m163-45h50m-50 27h50m-51 27h51" fill="none" stroke="#d9ffff" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+  <circle cx="94" cy="317" r="40" fill="#21825f"/>
+  <circle cx="131" cy="332" r="33" fill="#197454"/>
+  <circle cx="684" cy="329" r="37" fill="#1d815c"/>
+  <circle cx="720" cy="339" r="31" fill="#17694d"/>
+  <path d="M0 388h800" stroke="#69e1b4" stroke-width="7" opacity="0.22"/>
+</svg>

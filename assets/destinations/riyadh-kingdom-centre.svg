@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Riyadh skyline illustration</title>
+  <desc id="desc">A desert skyline with the Kingdom Centre silhouette inspired by Riyadh.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd98b"/>
+      <stop offset="58%" stop-color="#ffe9bc"/>
+      <stop offset="100%" stop-color="#fff6dc"/>
+    </linearGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d2a54f"/>
+      <stop offset="100%" stop-color="#a67424"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <circle cx="622" cy="104" r="48" fill="#fff3ba" opacity="0.9"/>
+  <path d="M0 356c98-31 179-30 272 4s177 46 253 33 161-52 275-84v191H0Z" fill="url(#sand)"/>
+  <path d="M157 208h54v137h-54zM226 182h62v163h-62zM303 144h72v201h-72zM394 203h48v142h-48zM457 189h61v156h-61zM531 171h43v174h-43zM592 220h55v125h-55z" fill="#6d4b1b"/>
+  <path d="M324 83h31v179h-31z" fill="#6d4b1b"/>
+  <path d="M318 104c0-34 14-52 22-52s22 18 22 52-14 52-22 52-22-18-22-52Zm19-27v54h8V77Z" fill="#6d4b1b"/>
+  <path d="M88 392c53 7 106 7 159 0m329 15c44 6 88 6 132 0" fill="none" stroke="#f9e4b3" stroke-width="5" stroke-linecap="round" opacity="0.45"/>
+</svg>

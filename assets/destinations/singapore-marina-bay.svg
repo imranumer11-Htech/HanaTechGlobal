@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Singapore bay illustration</title>
+  <desc id="desc">A bayfront skyline with Marina Bay style towers inspired by Singapore.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6ea8ff"/>
+      <stop offset="56%" stop-color="#9fd0ff"/>
+      <stop offset="100%" stop-color="#f3e6cf"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a6fa3"/>
+      <stop offset="100%" stop-color="#173b57"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <circle cx="646" cy="98" r="44" fill="#fff5bf" opacity="0.95"/>
+  <rect y="334" width="800" height="166" fill="url(#water)"/>
+  <path d="M0 388c129-18 230-17 350 6s260 30 450 0v106H0Z" fill="#103b4b"/>
+  <path d="M237 157h58v177h-58zM322 137h62v197h-62zM411 154h56v180h-56z" fill="#1f4f72"/>
+  <path d="M219 142c68-24 170-26 267 0-5 20-23 31-41 31H262c-18 0-35-11-43-31Z" fill="#1f4f72"/>
+  <path d="M525 188h50v146h-50zM590 206h38v128h-38z" fill="#234d6c"/>
+  <path d="M143 216h44v118h-44z" fill="#295f84"/>
+  <path d="M669 230c0-43 35-78 78-78-18 16-31 36-31 78s13 61 31 77c-43 0-78-35-78-77Z" fill="#1f4f72"/>
+  <path d="M287 366c60 8 118 8 178 0m236 14c24 4 46 4 70 0" fill="none" stroke="#cce6ff" stroke-width="5" stroke-linecap="round" opacity="0.54"/>
+</svg>

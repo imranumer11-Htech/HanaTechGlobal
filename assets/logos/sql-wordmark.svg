@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 72" role="img" aria-labelledby="title desc">
+  <title id="title">SQL wordmark</title>
+  <desc id="desc">Simple local wordmark for SQL courses.</desc>
+  <rect width="240" height="72" rx="18" fill="#0f766e"/>
+  <ellipse cx="48" cy="22" rx="18" ry="8" fill="#ccfbf1"/>
+  <path d="M30 22v19c0 5 8 9 18 9s18-4 18-9V22" fill="#99f6e4"/>
+  <path d="M30 32c0 5 8 9 18 9s18-4 18-9m-36 10c0 5 8 9 18 9s18-4 18-9" fill="none" stroke="#0f766e" stroke-width="3"/>
+  <path d="M104 22h40v8h-33v4h24c7 0 12 5 12 11s-5 11-12 11h-31v-8h31c1 0 2-1 2-3s-1-3-2-3h-24c-7 0-12-5-12-11s5-11 12-11Zm57 0h8v24h26v8h-34Z" fill="#fff"/>
+</svg>

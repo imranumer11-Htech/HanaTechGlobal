@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">New York skyline illustration</title>
+  <desc id="desc">A skyline with a harbor foreground and a statue silhouette inspired by New York.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a9c7e8"/>
+      <stop offset="56%" stop-color="#dbe9f6"/>
+      <stop offset="100%" stop-color="#fff2d9"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4d7599"/>
+      <stop offset="100%" stop-color="#243f56"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <circle cx="646" cy="97" r="43" fill="#fff2c2" opacity="0.9"/>
+  <rect y="346" width="800" height="154" fill="url(#water)"/>
+  <path d="M0 402c132-16 243-11 341 13s201 28 459-12v97H0Z" fill="#203543"/>
+  <path d="M212 194h44v152h-44zM272 155h55v191h-55zM344 176h65v170h-65zM427 135h48v211h-48zM493 163h57v183h-57zM566 205h39v141h-39z" fill="#334c63"/>
+  <path d="M111 204h26v74h26v68H86v-68h25Z" fill="#39586c"/>
+  <path d="M123 154h10v53h-10z" fill="#39586c"/>
+  <path d="M128 136 162 160 128 171 95 160Z" fill="#39586c"/>
+  <path d="M96 252h68" stroke="#cfe3f5" stroke-width="4" stroke-linecap="round" opacity="0.4"/>
+  <path d="M470 374c67 7 133 7 200 0" fill="none" stroke="#dceeff" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+</svg>
