@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HanaTech Global | Course Details</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0A1628;--navy2:#10213D;--blue:#1A56DB;--blue-light:#E8F0FE;--accent:#FF6B2B;
+  --green:#059669;--gold:#D97706;--bg:#F4F6FA;--white:#fff;--text:#111827;--text2:#5F6B7A;
+  --border:#E3E8F0;--soft:#F8FAFD;--radius:12px;--radius-lg:18px;--shadow:0 10px 34px rgba(12,24,43,0.09);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);}
+a{text-decoration:none;color:inherit;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 1.5rem;}
+.topbar{background:#06101F;color:rgba(255,255,255,0.78);font-size:12px;padding:8px 0;}
+.topbar .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.nav{background:var(--navy);border-bottom:1px solid rgba(255,255,255,0.08);}
+.nav .wrap{height:62px;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.brand{font-family:'Sora',sans-serif;font-size:20px;font-weight:800;color:#fff;letter-spacing:-0.2px;}
+.brand span{color:var(--accent);}
+.nav-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.nav-link{font-size:13px;color:rgba(255,255,255,0.72);font-weight:600;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:10px;padding:11px 18px;font-size:13px;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;transition:transform .12s,opacity .12s;}
+.btn:hover{transform:translateY(-1px);opacity:.94;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-blue{background:var(--blue);color:#fff;}
+.btn-light{background:#fff;color:var(--navy);}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--blue);}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#183761 100%);color:#fff;padding:2.4rem 0 2.8rem;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;right:-110px;top:-120px;width:420px;height:420px;background:radial-gradient(circle,rgba(255,107,43,.14),transparent 68%);pointer-events:none;}
+.crumb{position:relative;z-index:1;display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:12px;color:rgba(255,255,255,0.62);margin-bottom:1.2rem;}
+.crumb a{color:rgba(255,255,255,0.78);}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:24px;align-items:start;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:999px;padding:6px 12px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#BBD1FF;margin-bottom:14px;}
+.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);}
+h1{font-family:'Sora',sans-serif;font-size:40px;line-height:1.14;letter-spacing:-0.4px;margin-bottom:13px;}
+.lead{font-size:15.5px;line-height:1.85;color:rgba(255,255,255,0.74);max-width:760px;}
+.hero-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:1.55rem;}
+.trust-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:1.5rem;max-width:840px;}
+.trust-pill{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px 12px;font-size:12px;font-weight:650;color:rgba(255,255,255,0.78);line-height:1.45;}
+.snapshot{background:#fff;color:var(--text);border-radius:18px;padding:1.2rem;box-shadow:0 20px 50px rgba(0,0,0,0.18);}
+.snapshot-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:1rem;}
+.snapshot-title{font-family:'Sora',sans-serif;font-size:18px;font-weight:800;}
+.vendor-mark{width:82px;height:44px;border:1px solid var(--border);border-radius:10px;background:var(--soft);display:flex;align-items:center;justify-content:center;padding:8px;flex-shrink:0;}
+.vendor-mark img{max-width:100%;max-height:100%;object-fit:contain;}
+.vendor-mark span{font-family:'Sora',sans-serif;font-size:12px;font-weight:800;color:var(--blue);}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.fact{border:1px solid var(--border);background:#FBFCFF;border-radius:12px;padding:11px;}
+.fact-label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--text2);font-weight:800;margin-bottom:5px;}
+.fact-value{font-size:13px;font-weight:750;color:var(--text);line-height:1.35;}
+.section{padding:2rem 0;}
+.main-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start;}
+.stack{display:grid;gap:18px;}
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.45rem;box-shadow:var(--shadow);}
+.card h2{font-family:'Sora',sans-serif;font-size:22px;line-height:1.3;margin-bottom:10px;}
+.card h3{font-family:'Sora',sans-serif;font-size:15px;margin-bottom:8px;}
+.card p{font-size:14px;line-height:1.8;color:var(--text2);}
+.info-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:1rem;}
+.info-box{border:1px solid var(--border);background:var(--soft);border-radius:12px;padding:13px;}
+.info-kicker{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);font-weight:800;margin-bottom:6px;}
+.info-value{font-size:13px;line-height:1.5;font-weight:700;color:var(--text);}
+.modes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:1rem;}
+.mode{border:1px solid var(--border);border-radius:14px;padding:14px;background:#fff;}
+.mode-icon{width:34px;height:34px;border-radius:10px;background:var(--blue-light);color:var(--blue);display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:10px;}
+.mode-title{font-size:13px;font-weight:800;margin-bottom:5px;}
+.mode-text{font-size:12.5px;line-height:1.55;color:var(--text2);}
+.bullets{display:grid;gap:10px;margin-top:12px;}
+.bullet{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.65;color:var(--text2);}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--accent);margin-top:8px;flex:0 0 9px;}
+.check{width:18px;height:18px;border-radius:50%;background:#DFF7EC;color:var(--green);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;margin-top:3px;flex:0 0 18px;}
+.outline{display:grid;gap:12px;margin-top:1rem;}
+.module{display:grid;grid-template-columns:74px 1fr;gap:13px;border:1px solid var(--border);border-radius:14px;padding:13px;background:#fff;}
+.module-num{font-family:'Sora',sans-serif;font-size:12px;font-weight:800;color:var(--blue);background:var(--blue-light);border-radius:10px;display:flex;align-items:center;justify-content:center;min-height:42px;}
+.module-title{font-size:14px;font-weight:800;margin-bottom:4px;}
+.module-text{font-size:13px;color:var(--text2);line-height:1.6;}
+.side-card{position:sticky;top:18px;}
+.price-card{background:var(--navy);color:#fff;border-radius:18px;padding:1.35rem;box-shadow:var(--shadow);}
+.price-card h2{font-family:'Sora',sans-serif;font-size:20px;margin-bottom:8px;}
+.price-card p{font-size:13px;line-height:1.7;color:rgba(255,255,255,0.68);margin-bottom:1rem;}
+.side-actions{display:grid;gap:10px;}
+.side-list{display:grid;gap:10px;margin-top:1rem;}
+.side-item{display:flex;gap:9px;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.78);}
+.mini-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:7px;flex:0 0 6px;}
+.calendar-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:1.2rem;box-shadow:var(--shadow);}
+.schedule-grid{display:grid;gap:10px;margin-top:10px;}
+.schedule-row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--border);padding-bottom:9px;font-size:13px;}
+.schedule-row:last-child{border-bottom:none;padding-bottom:0;}
+.schedule-row span:first-child{color:var(--text2);}
+.schedule-row span:last-child{font-weight:800;color:var(--text);}
+.faq{display:grid;gap:10px;margin-top:1rem;}
+.faq-item{border:1px solid var(--border);border-radius:12px;padding:13px;background:#fff;}
+.faq-q{font-size:13px;font-weight:800;margin-bottom:5px;}
+.faq-a{font-size:13px;line-height:1.65;color:var(--text2);}
+.cta-band{background:linear-gradient(135deg,#10213D 0%,#1A56DB 100%);border-radius:18px;padding:1.5rem;display:flex;justify-content:space-between;gap:1rem;align-items:center;color:#fff;}
+.cta-band h2{font-family:'Sora',sans-serif;font-size:22px;margin-bottom:6px;}
+.cta-band p{font-size:13.5px;line-height:1.7;color:rgba(255,255,255,0.76);}
+@media(max-width:960px){
+  .hero-grid,.main-grid{grid-template-columns:1fr;}
+  .side-card{position:static;}
+  .trust-row{grid-template-columns:1fr 1fr;}
+  .modes{grid-template-columns:1fr 1fr;}
+  .info-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:620px){
+  .nav .wrap{height:auto;padding-top:14px;padding-bottom:14px;align-items:flex-start;}
+  .nav-actions{justify-content:flex-start;}
+  h1{font-size:29px;}
+  .hero{padding:2rem 0;}
+  .facts,.trust-row,.modes,.info-grid{grid-template-columns:1fr;}
+  .module{grid-template-columns:1fr;}
+  .cta-band{display:block;}
+  .cta-band .btn{margin-top:1rem;}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap"><span>info@hanatech.global</span><span>Corporate, online, classroom, and destination training support</span></div>
+</div>
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Hana<span>Tech</span> Global</a>
+    <div class="nav-actions">
+      <a class="nav-link" href="index.html?page=courses">All courses</a>
+      <a class="nav-link" href="index.html?page=contact">Contact</a>
+      <a class="btn btn-primary" id="top-enquire" href="index.html?page=contact">Enquire now</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">Home</a><span>/</span><a href="index.html?page=courses">Courses</a><span>/</span><span id="crumb-title">Course</span></div>
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="eyebrow-dot"></span><span id="course-tag">Course Details</span></div>
+        <h1 id="course-title">Loading course details</h1>
+        <p class="lead" id="course-desc">Please wait while we load the course information.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="download-btn">Request brochure</button>
+          <a class="btn btn-light" href="index.html?page=contact">Talk to a training advisor</a>
+          <a class="btn btn-outline" href="index.html?page=courses">Back to courses</a>
+        </div>
+        <div class="trust-row">
+          <div class="trust-pill">Live instructor led sessions</div>
+          <div class="trust-pill">Weekday and weekend batches</div>
+          <div class="trust-pill">Corporate and one-to-one options</div>
+          <div class="trust-pill">Certificate and exam guidance</div>
+        </div>
+      </div>
+      <aside class="snapshot">
+        <div class="snapshot-head">
+          <div>
+            <div class="snapshot-title">Course snapshot</div>
+            <div class="fact-label" id="snapshot-sub">Training details</div>
+          </div>
+          <div class="vendor-mark" id="vendor-mark"><span>HT</span></div>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Duration</div><div class="fact-value" id="fact-duration">32-40 hours</div></div>
+          <div class="fact"><div class="fact-label">Level</div><div class="fact-value" id="fact-level">Foundation to practitioner</div></div>
+          <div class="fact"><div class="fact-label">Modes</div><div class="fact-value">Online, classroom, onsite</div></div>
+          <div class="fact"><div class="fact-label">Support</div><div class="fact-value">Labs, recordings, Q and A</div></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="section">
+    <div class="wrap main-grid">
+      <div class="stack">
+        <article class="card">
+          <h2>Course overview</h2>
+          <p id="about-text"></p>
+          <div class="info-grid">
+            <div class="info-box"><div class="info-kicker">Best for</div><div class="info-value" id="best-for">Professionals and teams</div></div>
+            <div class="info-box"><div class="info-kicker">Batch type</div><div class="info-value">Public, private, corporate</div></div>
+            <div class="info-box"><div class="info-kicker">Outcome</div><div class="info-value" id="outcome">Practical capability and exam readiness</div></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Available delivery modes</h2>
+          <p>Choose the format that fits your schedule, team size, and location. Private batches can be customized for tools, workflows, and business examples.</p>
+          <div class="modes">
+            <div class="mode"><div class="mode-icon">01</div><div class="mode-title">Live online</div><div class="mode-text">Interactive trainer led classes with Q and A, recordings, and guided practice.</div></div>
+            <div class="mode"><div class="mode-icon">02</div><div class="mode-title">Classroom</div><div class="mode-text">Face to face training in selected cities and destination training locations.</div></div>
+            <div class="mode"><div class="mode-icon">03</div><div class="mode-title">On premises</div><div class="mode-text">Trainer visits your company site for private team delivery and reporting.</div></div>
+            <div class="mode"><div class="mode-icon">04</div><div class="mode-title">One-to-one</div><div class="mode-text">Focused mentoring for urgent certification, role transition, or executive schedules.</div></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>What you will learn</h2>
+          <div class="outline" id="outline-list"></div>
+        </article>
+
+        <article class="card">
+          <h2>Pre requisites</h2>
+          <div class="bullets" id="prereq-list"></div>
+        </article>
+
+        <article class="card">
+          <h2>Who should attend</h2>
+          <div class="bullets" id="fit-list"></div>
+        </article>
+
+        <article class="card">
+          <h2>Labs, practice, and deliverables</h2>
+          <div class="bullets" id="labs-list"></div>
+        </article>
+
+        <article class="card">
+          <h2>Frequently asked questions</h2>
+          <div class="faq" id="faq-list"></div>
+        </article>
+
+        <div class="cta-band">
+          <div>
+            <h2>Need a custom batch for your team?</h2>
+            <p>Share your preferred dates, location, learner count, and course scope. We can prepare a focused corporate proposal.</p>
+          </div>
+          <a class="btn btn-light" href="index.html?page=contact">Plan a batch</a>
+        </div>
+      </div>
+
+      <aside class="stack side-card">
+        <div class="price-card">
+          <h2>Request course details</h2>
+          <p>Get the latest brochure, batch schedule, trainer profile, corporate pricing, and exam voucher guidance where applicable.</p>
+          <div class="side-actions">
+            <button class="btn btn-primary" id="side-brochure">Request brochure</button>
+            <a class="btn btn-light" id="whatsapp-link" href="#" target="_blank" rel="noopener">WhatsApp advisor</a>
+          </div>
+          <div class="side-list">
+            <div class="side-item"><span class="mini-dot"></span><span>Batch schedule shared before enrolment</span></div>
+            <div class="side-item"><span class="mini-dot"></span><span>Trainer profile available for corporate batches</span></div>
+            <div class="side-item"><span class="mini-dot"></span><span>Course customization for private teams</span></div>
+          </div>
+        </div>
+        <div class="calendar-card">
+          <h3>Quick facts</h3>
+          <div class="schedule-grid">
+            <div class="schedule-row"><span>Duration</span><span id="side-duration">32-40 hours</span></div>
+            <div class="schedule-row"><span>Schedules</span><span>Weekday or weekend</span></div>
+            <div class="schedule-row"><span>Session length</span><span>2-4 hours per day</span></div>
+            <div class="schedule-row"><span>Certificate</span><span>Completion certificate</span></div>
+            <div class="schedule-row"><span>Exam</span><span id="side-exam">Guidance available</span></div>
+          </div>
+        </div>
+        <div class="calendar-card">
+          <h3>Popular add-ons</h3>
+          <div class="bullets" id="addon-list"></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<script>
+function slugify(value){
+  return value.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+}
+
+function enquiryPath(title){
+  return `index.html?page=contact&brochure=1&course=${encodeURIComponent(title)}`;
+}
+
+function buildBullet(text,type='dot'){
+  const item=document.createElement('div');
+  item.className='bullet';
+  item.innerHTML=type==='check' ? '<span class="check">&#10003;</span><div></div>' : '<span class="dot"></span><div></div>';
+  item.querySelector('div').textContent=text;
+  return item;
+}
+
+function buildModule(index,title,text){
+  const item=document.createElement('div');
+  item.className='module';
+  item.innerHTML=`<div class="module-num">Module ${String(index).padStart(2,'0')}</div><div><div class="module-title"></div><div class="module-text"></div></div>`;
+  item.querySelector('.module-title').textContent=title;
+  item.querySelector('.module-text').textContent=text;
+  return item;
+}
+
+function buildFaq(question,answer){
+  const item=document.createElement('div');
+  item.className='faq-item';
+  item.innerHTML='<div class="faq-q"></div><div class="faq-a"></div>';
+  item.querySelector('.faq-q').textContent=question;
+  item.querySelector('.faq-a').textContent=answer;
+  return item;
+}
+
+function courseBrand(title, tag){
+  const text=`${title} ${tag}`.toLowerCase();
+  if(text.includes('aws')) return {src:'assets/logos/aws-wordmark.svg', label:'AWS'};
+  if(text.includes('azure')||text.includes('microsoft')||text.includes('power bi')||text.includes('copilot')||text.includes('office')||text.includes('excel')||text.includes('word')||text.includes('powerpoint')) return {src:'assets/logos/microsoft-wordmark.svg', label:'Microsoft'};
+  if(text.includes('itil')||text.includes('prince2')) return {src:'assets/logos/vendors/peoplecert.svg', label:'PeopleCert'};
+  if(text.includes('pmp')||text.includes('capm')) return {src:'assets/logos/pmi-wordmark.svg', label:'PMI'};
+  if(text.includes('ceh')||text.includes('ethical hacker')) return {src:'assets/logos/eccouncil-wordmark.svg', label:'EC Council'};
+  if(text.includes('security+')||text.includes('network+')) return {src:'assets/logos/comptia-wordmark.svg', label:'CompTIA'};
+  if(text.includes('cissp')) return {src:'assets/logos/vendors/isc2.svg', label:'ISC2'};
+  if(text.includes('isaca')||text.includes('cisa')||text.includes('cism')||text.includes('cobit')) return {src:'assets/logos/vendors/isaca.svg', label:'ISACA'};
+  if(text.includes('pecb')||text.includes('iso')) return {src:'assets/logos/vendors/pecb.svg', label:'PECB'};
+  if(text.includes('cisco')||text.includes('ccna')||text.includes('ccnp')) return {src:'assets/logos/vendors/cisco.svg', label:'Cisco'};
+  if(text.includes('kubernetes')||text.includes('cka')||text.includes('ckad')) return {src:'assets/logos/kubernetes-wordmark.svg', label:'Kubernetes'};
+  if(text.includes('revit')||text.includes('autocad')||text.includes('bim')||text.includes('etabs')) return {src:'assets/logos/autodesk-wordmark.svg', label:'Autodesk'};
+  if(text.includes('chatgpt')||text.includes('prompt')||text.includes('generative ai')||text.includes('agent')||text.includes('ai ')) return {src:'assets/logos/vendors/openai.svg', label:'OpenAI'};
+  if(text.includes('python')) return {src:'assets/logos/vendors/python.svg', label:'Python'};
+  if(text.includes('sql')) return {src:'assets/logos/sql-wordmark.svg', label:'SQL'};
+  return {src:null, label:'HanaTech'};
+}
+
+function profileForCourse(tag,title){
+  const lowerTag=tag.toLowerCase();
+  const lowerTitle=title.toLowerCase();
+  const base={
+    duration:'32-40 hours',
+    level:'Foundation to practitioner',
+    bestFor:'Professionals and teams',
+    outcome:'Practical capability and exam readiness',
+    exam:'Guidance available',
+    prereqs:['Basic computer literacy and willingness to learn.','No prior certification background is required for most learners.','Regular attendance and practice will help you get the most from the course.'],
+    fit:['Working professionals upgrading their skills.','Fresh graduates building employable capabilities.','Teams looking for practical, trainer led learning.'],
+    labs:['Guided exercises are included to reinforce the topics covered.','Practice tasks help learners apply concepts quickly.','Trainer support is available during sessions for lab related questions.'],
+    outline:[
+      ['Core concepts and terminology','Build the vocabulary and mental model needed to understand the domain clearly.'],
+      ['Tools, workflows, and practical examples','Connect concepts to real workplace scenarios and implementation patterns.'],
+      ['Hands on guided practice','Work through exercises, templates, labs, or case studies with trainer support.'],
+      ['Best practices and common mistakes','Learn how professionals apply the subject in real projects and avoid avoidable errors.'],
+      ['Review and next steps','Close with revision, Q and A, certification guidance, and practical action planning.']
+    ],
+    addons:['Private batch customization','Recorded session access where available','Post training assessment or mock test','Completion certificate']
+  };
+  if(lowerTag.includes('cloud')||lowerTitle.includes('aws')||lowerTitle.includes('azure')||lowerTitle.includes('kubernetes')||lowerTitle.includes('docker')){
+    return {...base,duration:'32-40 hours',level:'Associate / administrator track',bestFor:'Cloud, infrastructure, and DevOps learners',outcome:'Cloud implementation and certification readiness',exam:'Voucher guidance available',
+      prereqs:['Basic operating system and internet knowledge.','Networking fundamentals are helpful for architecture and admin tracks.','For advanced tracks, prior cloud exposure improves pace but is not mandatory.'],
+      fit:['IT support professionals moving into cloud.','System administrators and DevOps learners.','Graduates targeting cloud, platform, or infrastructure roles.'],
+      labs:['Cloud console walkthroughs and guided service configuration.','Architecture scenarios covering compute, storage, identity, and networking.','Troubleshooting and exam style practice exercises.'],
+      outline:[['Cloud foundations and shared responsibility','Understand cloud models, service categories, billing, governance, and security responsibility.'],['Core platform services','Work through compute, storage, networking, database, monitoring, and identity concepts.'],['Architecture and operations','Map workloads to resilient, secure, and cost-aware designs.'],['Hands on labs','Practice guided configuration and troubleshooting tasks based on real scenarios.'],['Exam and career preparation','Review domains, question style, revision plan, and next certification steps.']],
+      addons:['Sandbox lab planning','Architecture review workshop','Exam readiness mock test','Corporate cloud roadmap session']};
+  }
+  if(lowerTag.includes('ai')||lowerTitle.includes('chatgpt')||lowerTitle.includes('copilot')||lowerTitle.includes('gemini')||lowerTitle.includes('agent')){
+    return {...base,duration:'12-24 hours',level:'Beginner to applied practitioner',bestFor:'Office teams, analysts, managers, and graduates',outcome:'Practical AI workflows for daily work',exam:'No exam required unless customized',
+      prereqs:['Comfort using office software and browser based tools.','No coding needed for most workplace AI tracks.','For agent and API tracks, basic scripting awareness is helpful.'],
+      fit:['Working professionals who want productivity gains.','Teams exploring automation and AI enabled workflows.','Graduates trying to become more job ready.'],
+      labs:['Prompt design drills using real business tasks.','Workflow exercises across documents, research, reporting, and communication.','Optional mini projects for automation and agent based use cases.'],
+      outline:[['AI foundations for work','Understand capabilities, limits, safety, privacy, and responsible usage.'],['Prompting patterns','Practice reusable prompt structures for analysis, writing, research, and planning.'],['Workflow automation','Apply AI to documents, spreadsheets, presentations, meetings, and team operations.'],['Quality control','Review outputs, reduce hallucinations, protect data, and create approval workflows.'],['Team playbook','Build reusable templates, prompt libraries, and next-step adoption plans.']],
+      addons:['Team prompt library','Department workflow mapping','AI policy and safe-use briefing','Executive demo session']};
+  }
+  if(lowerTag.includes('cybersecurity')||lowerTitle.includes('security')||lowerTitle.includes('ceh')||lowerTitle.includes('cissp')||lowerTitle.includes('cisa')||lowerTitle.includes('cism')||lowerTitle.includes('iso')){
+    return {...base,duration:'32-40 hours',level:'Foundation to professional',bestFor:'IT, audit, governance, and security teams',outcome:'Security practice and certification readiness',exam:'Exam guidance available',
+      prereqs:['General IT familiarity is helpful.','Networking basics improve understanding for many security topics.','Advanced certifications benefit from prior experience and scenario practice.'],
+      fit:['IT professionals exploring cybersecurity.','Security, audit, risk, and compliance teams.','Learners preparing for recognised security certifications.'],
+      labs:['Security tool demonstrations and guided environment walkthroughs.','Threat analysis, log review, control mapping, and incident scenarios.','Practice tasks aligned with exam domains and security workflows.'],
+      outline:[['Security concepts and risk context','Build a clear view of threats, controls, governance, and operational responsibilities.'],['Domain knowledge and frameworks','Study the certification or framework domains with practical examples.'],['Tools, controls, and scenarios','Apply concepts through demonstrations, case studies, and guided exercises.'],['Assessment practice','Work through scenario questions, control reviews, and exam style revision.'],['Implementation roadmap','Plan how to apply the learning within projects, teams, or compliance initiatives.']],
+      addons:['Mock exam session','Security maturity workshop','Policy and control mapping exercise','Team assessment report']};
+  }
+  if(lowerTag.includes('project management')||lowerTag.includes('itil')||lowerTitle.includes('pmp')||lowerTitle.includes('capm')||lowerTitle.includes('scrum')||lowerTitle.includes('prince2')||lowerTitle.includes('itil')){
+    return {...base,duration:'24-35 hours',level:'Foundation to practitioner',bestFor:'PMO, operations, service desk, and delivery teams',outcome:'Framework application and exam readiness',exam:'Voucher guidance available',
+      prereqs:['Professional work experience is useful for case study discussions.','No technical background required for most foundation tracks.','A willingness to practice scenario based questions helps a lot.'],
+      fit:['Team leads, coordinators, and aspiring project managers.','Operations and service delivery professionals.','Graduates looking to enter PM, PMO, or service management roles.'],
+      labs:['Case study discussions and guided scenario based planning exercises.','Mock exam style questions and process mapping tasks.','Templates, trackers, and framework application practice.'],
+      outline:[['Framework principles','Understand the vocabulary, roles, lifecycle, practices, and governance structure.'],['Process and value flow','Map how work moves from request or idea to delivery, support, and improvement.'],['Scenario application','Practice decisions through case studies, service examples, and project situations.'],['Exam preparation','Review exam domains, question style, timing, and revision strategy.'],['Workplace adoption','Build a practical action plan for applying the framework after training.']],
+      addons:['Mock exam and review','PMO or service desk workshop','Template pack','Private cohort progress report']};
+  }
+  if(lowerTag.includes('data')||lowerTitle.includes('sql')||lowerTitle.includes('power bi')||lowerTitle.includes('python')||lowerTitle.includes('analyst')){
+    return {...base,duration:'30-45 hours',level:'Beginner to job ready',bestFor:'Analysts, reporting teams, and graduates',outcome:'Portfolio-ready analytics practice',exam:'Project assessment available',
+      prereqs:['Comfort working with spreadsheets and structured information.','No advanced math required for starter tracks.','Regular practice is important for SQL, Python, and analytics growth.'],
+      fit:['Fresh graduates targeting analyst jobs.','Working professionals moving into analytics.','Teams that need stronger reporting and dashboard skills.'],
+      labs:['Hands on spreadsheet, SQL, Python, or dashboard exercises depending on the track.','Data cleanup, reporting, and analysis drills using realistic examples.','Practice assignments that can be reused in a learner portfolio.'],
+      outline:[['Data foundations','Understand data types, business questions, quality issues, and reporting goals.'],['Tool workflow','Learn the core interface, formulas, queries, scripts, or dashboard components.'],['Analysis and visualization','Create useful outputs that explain trends, exceptions, and decisions.'],['Hands on project','Build a guided report, analysis, or dashboard from raw data to final presentation.'],['Portfolio and next steps','Package your work, review interview topics, and plan continued practice.']],
+      addons:['Portfolio project review','Dashboard redesign workshop','Team data cleanup lab','Manager reporting template']};
+  }
+  if(lowerTag.includes('web and app dev')||lowerTitle.includes('react')||lowerTitle.includes('node')||lowerTitle.includes('flutter')||lowerTitle.includes('android')||lowerTitle.includes('full stack')){
+    return {...base,duration:'40-60 hours',level:'Beginner to project ready',bestFor:'Developers, graduates, and career switchers',outcome:'Build deployable project skills',exam:'Project assessment available',
+      prereqs:['Basic computer literacy and willingness to practice regularly.','Helpful if you have seen basic programming logic before.','For full stack tracks, consistency with assignments matters most.'],
+      fit:['New graduates entering software development.','Career switchers building app and web skills.','Junior developers who want stronger fundamentals.'],
+      labs:['Build guided frontend, backend, mobile, or full stack mini projects.','Work with APIs, state, data, and deployment tasks in practical sessions.','Complete portfolio style assignments by the end of the track.'],
+      outline:[['Development foundations','Set up the environment and understand project structure, code flow, and debugging.'],['Core framework skills','Build screens, components, APIs, routes, data handling, and user workflows.'],['Integration practice','Connect frontend, backend, storage, authentication, or external APIs as relevant.'],['Project build','Complete a guided capstone with trainer review and improvement tasks.'],['Deployment and portfolio','Prepare the project for demo, GitHub, deployment, and interview discussion.']],
+      addons:['Portfolio review','GitHub setup session','Interview coding practice','Capstone enhancement sprint']};
+  }
+  if(lowerTag.includes('engineering')||lowerTitle.includes('revit')||lowerTitle.includes('autocad')||lowerTitle.includes('bim')||lowerTitle.includes('etabs')){
+    return {...base,duration:'30-45 hours',level:'Beginner to professional workflow',bestFor:'Civil, structural, architecture, and BIM learners',outcome:'Project based software confidence',exam:'Project review available',
+      prereqs:['Relevant engineering, architecture, or drafting background is helpful.','Basic software familiarity is recommended.','Project based practice improves retention.'],
+      fit:['Civil, structural, and BIM professionals.','Engineering graduates.','Technical staff moving into software led delivery.'],
+      labs:['Software based modelling and documentation practice in guided sessions.','Project style exercises using common workflows and outputs.','Review based correction and trainer feedback on practical tasks.'],
+      outline:[['Interface and setup','Understand the software workspace, project setup, units, standards, and navigation.'],['Core modelling or drafting workflow','Build the essential objects, drawings, models, or analytical elements.'],['Documentation and coordination','Produce usable outputs, sheets, schedules, clash checks, or design reports.'],['Project practice','Work through a realistic assignment with trainer correction and review.'],['Professional workflow','Learn quality checks, file management, collaboration, and delivery best practices.']],
+      addons:['Project file review','Office standard template session','BIM coordination workshop','Portfolio drawing set review']};
+  }
+  return base;
+}
+
+function clearAndFill(id,items,type='dot'){
+  const target=document.getElementById(id);
+  target.innerHTML='';
+  items.forEach(item=>target.appendChild(buildBullet(item,type)));
+}
+
+function loadFromCatalog(courseTitle){
+  return fetch('index.html')
+    .then(response=>response.text())
+    .then(html=>{
+      const doc=new DOMParser().parseFromString(html,'text/html');
+      const cards=[...doc.querySelectorAll('.course-card')];
+      const match=cards.find(card=>{
+        const t=card.querySelector('.course-title');
+        return t && t.textContent.trim()===courseTitle;
+      });
+      if(!match) return null;
+      return {
+        tag:match.querySelector('.course-tag')?.textContent.trim() || 'Course',
+        desc:match.querySelector('.course-desc')?.textContent.trim() || 'Course description coming soon.'
+      };
+    });
+}
+
+function applyCourse(courseTitle,tag,desc){
+  const profile=profileForCourse(tag,courseTitle);
+  const brand=courseBrand(courseTitle,tag);
+  document.title=`${courseTitle} | HanaTech Global`;
+  document.getElementById('course-title').textContent=courseTitle;
+  document.getElementById('crumb-title').textContent=courseTitle;
+  document.getElementById('course-tag').textContent=tag;
+  document.getElementById('course-desc').textContent=desc;
+  document.getElementById('about-text').textContent=`${desc} This course is structured for clear learning outcomes, trainer interaction, guided practice, and practical workplace application. You can attend as an individual learner or request a private batch for your team.`;
+  document.getElementById('best-for').textContent=profile.bestFor;
+  document.getElementById('outcome').textContent=profile.outcome;
+  document.getElementById('fact-duration').textContent=profile.duration;
+  document.getElementById('side-duration').textContent=profile.duration;
+  document.getElementById('fact-level').textContent=profile.level;
+  document.getElementById('side-exam').textContent=profile.exam;
+  document.getElementById('snapshot-sub').textContent=tag;
+
+  const vendorMark=document.getElementById('vendor-mark');
+  vendorMark.innerHTML=brand.src ? `<img src="${brand.src}" alt="${brand.label} logo" onerror="this.parentElement.innerHTML='<span>${brand.label}</span>'">` : `<span>${brand.label}</span>`;
+
+  clearAndFill('prereq-list',profile.prereqs);
+  clearAndFill('fit-list',profile.fit,'check');
+  clearAndFill('labs-list',profile.labs,'check');
+  clearAndFill('addon-list',profile.addons);
+
+  const outline=document.getElementById('outline-list');
+  outline.innerHTML='';
+  profile.outline.forEach((item,index)=>outline.appendChild(buildModule(index+1,item[0],item[1])));
+
+  const faq=document.getElementById('faq-list');
+  faq.innerHTML='';
+  [
+    ['What is the usual duration?',`The standard duration is ${profile.duration}. The exact plan can change slightly depending on weekday, weekend, fast track, or private batch format.`],
+    ['Can this course be delivered for a corporate team?','Yes. We support private online, on premises, classroom, and destination batches with customization for team goals.'],
+    ['Will I receive recordings and completion proof?','Recordings are available where batch format permits, and completion certificates or attendance reports can be issued after training.'],
+    ['Is exam support included?',profile.exam.includes('No exam') ? 'This track is mainly practical. If your team needs assessment, we can add a project review or internal test.' : 'Yes. We can guide you on exam domains, voucher process, mock questions, and revision planning where applicable.']
+  ].forEach(item=>faq.appendChild(buildFaq(item[0],item[1])));
+
+  const path=enquiryPath(courseTitle);
+  document.getElementById('download-btn').onclick=()=>{window.location.href=path;};
+  document.getElementById('side-brochure').onclick=()=>{window.location.href=path;};
+  document.getElementById('top-enquire').href=path;
+  document.getElementById('whatsapp-link').href=`https://wa.me/919999999999?text=${encodeURIComponent(`Hi HanaTech Global, I want details for ${courseTitle}.`)}`;
+}
+
+async function loadCourse(){
+  const params=new URLSearchParams(window.location.search);
+  const title=params.get('course') || 'Course details';
+  let tag=params.get('tag') || '';
+  let desc=params.get('desc') || '';
+
+  if(!tag || !desc){
+    try{
+      const found=await loadFromCatalog(title);
+      if(found){ tag=found.tag; desc=found.desc; }
+    }catch(error){}
+  }
+
+  if(!tag) tag='Professional Training';
+  if(!desc) desc='Detailed curriculum, schedule, and batch options are available for this course.';
+  applyCourse(title,tag,desc);
+}
+
+loadCourse();
+</script>
+</body>
+</html>

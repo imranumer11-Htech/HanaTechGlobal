@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choose Callback Time | HanaTech Global</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;background:#F4F6FA;color:#111827;min-height:100vh;display:grid;place-items:center;padding:24px}
+.card{width:min(520px,100%);background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.08);padding:28px}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#1A56DB;margin-bottom:8px}
+h1{font-family:Sora,sans-serif;font-size:28px;line-height:1.2;margin-bottom:10px}
+p{font-size:14px;line-height:1.7;color:#6B7280;margin-bottom:20px}
+label{display:block;font-size:13px;color:#6B7280;margin-bottom:6px;font-weight:600}
+input,select,textarea{width:100%;padding:12px 14px;border:1.5px solid #E5E7EB;border-radius:8px;font:14px Inter,sans-serif;margin-bottom:14px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#1A56DB}
+button{width:100%;border:0;border-radius:8px;background:#FF6B2B;color:#fff;font:700 14px Inter,sans-serif;padding:13px 18px;cursor:pointer}
+.note{font-size:12px;color:#6B7280;margin-top:12px;text-align:center}
+.success{display:none;background:#E8F5E9;color:#14532D;border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.6;margin-top:14px}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="eyebrow">Optional Callback Time</div>
+  <h1>Choose a time for your call</h1>
+  <p>This step is optional. HanaTech Global is available 24*7, so you can suggest a preferred callback window or close this tab and continue the enquiry form.</p>
+  <form id="callback-form">
+    <label for="callback-date">Preferred date</label>
+    <input id="callback-date" type="date">
+    <label for="callback-time">Preferred time</label>
+    <input id="callback-time" type="time">
+    <label for="callback-zone">Time zone</label>
+    <select id="callback-zone">
+      <option>Asia/Dubai</option>
+      <option>Asia/Kolkata</option>
+      <option>Europe/London</option>
+      <option>America/New_York</option>
+      <option>Other</option>
+    </select>
+    <label for="callback-notes">Notes</label>
+    <textarea id="callback-notes" rows="3" placeholder="Course name, phone number, or any timing preference"></textarea>
+    <button type="submit">Save preferred time</button>
+  </form>
+  <div class="success" id="callback-success">Preferred callback time noted. You can return to the enquiry form tab.</div>
+  <div class="note">No time selection is required to submit your enquiry.</div>
+</main>
+<script>
+document.getElementById('callback-form').addEventListener('submit',function(event){
+  event.preventDefault();
+  document.getElementById('callback-success').style.display='block';
+});
+</script>
+</body>
+</html>
