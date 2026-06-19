@@ -313,6 +313,7 @@ img{display:block;max-width:100%;}
 .form-input:focus{border-color:var(--blue);}
 .required-star{color:var(--accent);}
 .is-hidden{display:none !important;}
+.contact-form-panel{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.4rem;box-shadow:var(--shadow);}
 .form-success{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:var(--shadow);margin-top:1rem;}
 .form-success h4{font-family:'Sora',sans-serif;font-size:20px;margin-bottom:10px;}
 .form-success p{font-size:14px;line-height:1.75;color:var(--text2);margin-bottom:1rem;}
@@ -2320,51 +2321,15 @@ img{display:block;max-width:100%;}
     <div class="contact-wrap">
       <div>
         <h3 style="font-family:Sora,sans-serif;font-size:20px;font-weight:700;margin-bottom:1.2rem;">Send an enquiry</h3>
-        <form id="enquiry-form">
         <div class="info-box info-box-blue" id="brochure-enquiry-banner" style="display:none;">
-          <div class="info-icon">&#9993;</div>
-          <div><strong id="brochure-enquiry-title">Course brochure request</strong><br><span id="brochure-enquiry-copy">Fill the enquiry form and we will share the brochure with you by email.</span></div>
-        </div>
-        <div class="form-group"><label class="form-label">Full name <span class="required-star">*</span></label><input class="form-input" id="enquiry-name" type="text" placeholder="Your full name" required></div>
-        <div class="form-group"><label class="form-label">Email address <span class="required-star">*</span></label><input class="form-input" id="enquiry-email" type="email" placeholder="you@email.com" required></div>
-        <div class="form-group"><label class="form-label">WhatsApp number</label><input class="form-input" id="enquiry-phone" type="tel" placeholder="Include country code e.g. +91 or +971"></div>
-        <div class="form-group"><label class="form-label">Country <span class="required-star">*</span></label>
-          <select class="form-input" id="enquiry-country" required>
-            <option value="" selected>Select country</option>
-            <optgroup label="Middle East">
-              <option>Bahrain</option><option>Egypt</option><option>Iran</option><option>Iraq</option><option>Israel</option><option>Jordan</option><option>Kuwait</option><option>Lebanon</option><option>Oman</option><option>Palestine</option><option>Qatar</option><option>Saudi Arabia</option><option>Syria</option><option>Turkey</option><option>United Arab Emirates</option><option>Yemen</option>
-            </optgroup>
-            <optgroup label="Africa">
-              <option>Algeria</option><option>Angola</option><option>Botswana</option><option>Cameroon</option><option>Cote d Ivoire</option><option>Democratic Republic of the Congo</option><option>Egypt</option><option>Ethiopia</option><option>Ghana</option><option>Kenya</option><option>Morocco</option><option>Mozambique</option><option>Namibia</option><option>Nigeria</option><option>Rwanda</option><option>Senegal</option><option>South Africa</option><option>Sudan</option><option>Tanzania</option><option>Tunisia</option><option>Uganda</option><option>Zambia</option><option>Zimbabwe</option>
-            </optgroup>
-            <optgroup label="Asia">
-              <option>Afghanistan</option><option>Bangladesh</option><option>Bhutan</option><option>Brunei</option><option>Cambodia</option><option>China</option><option>Hong Kong</option><option>India</option><option>Indonesia</option><option>Japan</option><option>Kazakhstan</option><option>Kyrgyzstan</option><option>Laos</option><option>Malaysia</option><option>Maldives</option><option>Mongolia</option><option>Myanmar</option><option>Nepal</option><option>Pakistan</option><option>Philippines</option><option>Singapore</option><option>South Korea</option><option>Sri Lanka</option><option>Taiwan</option><option>Tajikistan</option><option>Thailand</option><option>Turkmenistan</option><option>Uzbekistan</option><option>Vietnam</option>
-            </optgroup>
-            <optgroup label="Europe">
-              <option>Austria</option><option>Belgium</option><option>Bulgaria</option><option>Croatia</option><option>Cyprus</option><option>Czech Republic</option><option>Denmark</option><option>Estonia</option><option>Finland</option><option>France</option><option>Germany</option><option>Greece</option><option>Hungary</option><option>Ireland</option><option>Italy</option><option>Latvia</option><option>Lithuania</option><option>Luxembourg</option><option>Malta</option><option>Netherlands</option><option>Norway</option><option>Poland</option><option>Portugal</option><option>Romania</option><option>Serbia</option><option>Slovakia</option><option>Slovenia</option><option>Spain</option><option>Sweden</option><option>Switzerland</option><option>Ukraine</option><option>United Kingdom</option>
-            </optgroup>
-            <optgroup label="Americas">
-              <option>Canada</option><option>Mexico</option><option>United States</option><option>Argentina</option><option>Brazil</option><option>Chile</option><option>Colombia</option><option>Peru</option>
-            </optgroup>
-            <optgroup label="Oceania">
-              <option>Australia</option><option>New Zealand</option>
-            </optgroup>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-group is-hidden" id="enquiry-country-other-wrap"><label class="form-label">Enter country <span class="required-star">*</span></label><input class="form-input" id="enquiry-country-other" type="text" placeholder="Type your country"></div>
-        <div class="form-group"><label class="form-label">Course of interest</label>
-          <input class="form-input" id="enquiry-course" type="text" list="enquiry-course-list" placeholder="Type the course you are interested in">
-          <datalist id="enquiry-course-list"></datalist>
-        </div>
-        <div class="form-group"><label class="form-label">How would you like us to respond?</label>
-          <select class="form-input" id="enquiry-method"><option>Email (we reply within 2 hours)</option><option>WhatsApp (we reply within 2 hours)</option><option>Call back (available 24*7)</option></select>
-        </div>
-        <div class="form-group"><label class="form-label">Anything else</label>
-          <textarea class="form-input" id="enquiry-notes" rows="3" placeholder="Any specific questions or requirements..."></textarea>
-        </div>
-        <button class="btn btn-primary btn-block" style="padding:13px;" type="submit">Send enquiry</button>
-        </form>
+  <div class="info-icon">&#9993;</div>
+  <div><strong id="brochure-enquiry-title">Course brochure request</strong><br><span id="brochure-enquiry-copy">Complete the form below and we will share the brochure with you by email.</span></div>
+</div>
+
+<div class="contact-form-panel">
+  <script src="https://js-eu1.hsforms.net/forms/embed/148727120.js" defer></script>
+  <div class="hs-form-frame" data-region="eu1" data-form-id="d0176fb3-a681-4097-87e9-66ffddd1fafa" data-portal-id="148727120"></div>
+</div>
         <div class="form-success is-hidden" id="enquiry-success">
           <h4>Enquiry sent successfully</h4>
           <p id="enquiry-success-copy">Thank you for your enquiry. We will get back to you within 2 hours on your preferred contact method.</p>
