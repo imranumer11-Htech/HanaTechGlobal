@@ -313,7 +313,6 @@ img{display:block;max-width:100%;}
 .form-input:focus{border-color:var(--blue);}
 .required-star{color:var(--accent);}
 .is-hidden{display:none !important;}
-.contact-form-panel{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.4rem;box-shadow:var(--shadow);}
 .form-success{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:var(--shadow);margin-top:1rem;}
 .form-success h4{font-family:'Sora',sans-serif;font-size:20px;margin-bottom:10px;}
 .form-success p{font-size:14px;line-height:1.75;color:var(--text2);margin-bottom:1rem;}
@@ -2321,15 +2320,73 @@ img{display:block;max-width:100%;}
     <div class="contact-wrap">
       <div>
         <h3 style="font-family:Sora,sans-serif;font-size:20px;font-weight:700;margin-bottom:1.2rem;">Send an enquiry</h3>
-        <div class="info-box info-box-blue" id="brochure-enquiry-banner" style="display:none;">
+      <form id="enquiry-form">
+<div class="info-box info-box-blue" id="brochure-enquiry-banner" style="display:none;">
   <div class="info-icon">&#9993;</div>
-  <div><strong id="brochure-enquiry-title">Course brochure request</strong><br><span id="brochure-enquiry-copy">Complete the form below and we will share the brochure with you by email.</span></div>
+  <div><strong id="brochure-enquiry-title">Course brochure request</strong><br><span id="brochure-enquiry-copy">Fill the enquiry form and we will share the brochure with you by email.</span></div>
 </div>
 
-<div class="contact-form-panel">
-  <script src="https://js-eu1.hsforms.net/forms/embed/148727120.js" defer></script>
-  <div class="hs-form-frame" data-region="eu1" data-form-id="d0176fb3-a681-4097-87e9-66ffddd1fafa" data-portal-id="148727120"></div>
+<div class="form-group">
+<label class="form-label">Full name <span class="required-star">*</span></label>
+<input class="form-input" id="enquiry-name" type="text" placeholder="Your full name" required>
 </div>
+
+<div class="form-group">
+<label class="form-label">Email address <span class="required-star">*</span></label>
+<input class="form-input" id="enquiry-email" type="email" placeholder="you@email.com" required>
+</div>
+
+<div class="form-group">
+<label class="form-label">WhatsApp number</label>
+<input class="form-input" id="enquiry-phone" type="tel" placeholder="Include country code e.g. +91 or +971">
+</div>
+
+<div class="form-group">
+<label class="form-label">Country <span class="required-star">*</span></label>
+<select class="form-input" id="enquiry-country" required>
+<option value="" selected>Select country</option>
+<option>United Arab Emirates</option>
+<option>Saudi Arabia</option>
+<option>Qatar</option>
+<option>Kuwait</option>
+<option>Oman</option>
+<option>Bahrain</option>
+<option>India</option>
+<option>United States</option>
+<option>United Kingdom</option>
+<option>Canada</option>
+<option>Australia</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group is-hidden" id="enquiry-country-other-wrap">
+<label class="form-label">Enter country <span class="required-star">*</span></label>
+<input class="form-input" id="enquiry-country-other" type="text" placeholder="Type your country">
+</div>
+
+<div class="form-group">
+<label class="form-label">Course of interest</label>
+<input class="form-input" id="enquiry-course" type="text" list="enquiry-course-list" placeholder="Type the course you are interested in">
+<datalist id="enquiry-course-list"></datalist>
+</div>
+
+<div class="form-group">
+<label class="form-label">How would you like us to respond?</label>
+<select class="form-input" id="enquiry-method">
+<option>Email (we reply within 2 hours)</option>
+<option>WhatsApp (we reply within 2 hours)</option>
+<option>Call back (available 24*7)</option>
+</select>
+</div>
+
+<div class="form-group">
+<label class="form-label">Anything else</label>
+<textarea class="form-input" id="enquiry-notes" rows="3" placeholder="Any specific questions or requirements..."></textarea>
+</div>
+
+<button class="btn btn-primary btn-block" style="padding:13px;" type="submit">Send enquiry</button>
+</form>
         <div class="form-success is-hidden" id="enquiry-success">
           <h4>Enquiry sent successfully</h4>
           <p id="enquiry-success-copy">Thank you for your enquiry. We will get back to you within 2 hours on your preferred contact method.</p>
@@ -2413,7 +2470,9 @@ img{display:block;max-width:100%;}
 
 <script>
 let brochureRequestActive=false;
-
+const HUBSPOT_PORTAL_ID='148727120';
+const HUBSPOT_FORM_ID='d0176fb3-a681-4097-87e9-66ffddd1fafa';
+const HUBSPOT_SUBMIT_URL=`https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`;
 function slugify(value){
   return value.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 }
@@ -2732,14 +2791,91 @@ function applyPageContext(){
   }
 }
 
-document.getElementById('enquiry-form').addEventListener('submit',function(event){
+function getCookieValue(name){
+  return document.cookie
+    .split('; ')
+    .find(row=>row.startsWith(`${name}=`))
+    ?.split('=')
+    .slice(1)
+    .join('=') || '';
+}
+
+function splitFullName(fullName){
+  const parts=fullName.trim().split(/\s+/).filter(Boolean);
+  if(parts.length<=1) return {firstName:parts[0] || '',lastName:''};
+  return {firstName:parts.slice(0,-1).join(' '),lastName:parts[parts.length-1]};
+}
+
+function buildHubSpotSubmissionPayload(){
+  const fullName=document.getElementById('enquiry-name')?.value.trim() || '';
+  const email=document.getElementById('enquiry-email')?.value.trim() || '';
+  const phone=document.getElementById('enquiry-phone')?.value.trim() || '';
+  const selectedCountry=document.getElementById('enquiry-country')?.value || '';
+  const otherCountry=document.getElementById('enquiry-country-other')?.value.trim() || '';
+  const country=selectedCountry==='Other' ? otherCountry : selectedCountry;
+  const course=document.getElementById('enquiry-course')?.value.trim() || 'Not specified';
+  const method=document.getElementById('enquiry-method')?.value || 'Not specified';
+  const notes=document.getElementById('enquiry-notes')?.value.trim() || '';
+  const {firstName,lastName}=splitFullName(fullName);
+
+  const message=[
+    `Course of interest: ${course}`,
+    `Preferred response method: ${method}`,
+    `Country: ${country || 'Not specified'}`,
+    notes ? `Additional notes: ${notes}` : ''
+  ].filter(Boolean).join('\n');
+
+  const context={
+    pageUri:window.location.href,
+    pageName:document.title
+  };
+
+  const hutk=getCookieValue('hubspotutk');
+  if(hutk) context.hutk=hutk;
+
+  return {
+    submittedAt:Date.now(),
+    fields:[
+      {name:'email',value:email},
+      {name:'firstname',value:firstName || fullName},
+      {name:'lastname',value:lastName},
+      {name:'phone',value:phone},
+      {name:'country',value:country},
+      {name:'message',value:message}
+    ].filter(field=>field.value),
+    context
+  };
+}
+
+async function submitLeadToHubSpot(){
+  const response=await fetch(HUBSPOT_SUBMIT_URL,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(buildHubSpotSubmissionPayload())
+  });
+
+  if(!response.ok){
+    throw new Error('HubSpot submission failed');
+  }
+}
+
+document.getElementById('enquiry-form')?.addEventListener('submit',async function(event){
   event.preventDefault();
+
   if(!this.reportValidity()) return;
-  showEnquirySuccess();
-  brochureRequestActive=false;
-  clearBrochureEnquiry();
-  this.reset();
-  toggleCustomCountryField();
+
+  try{
+    await submitLeadToHubSpot();
+
+    showEnquirySuccess();
+    brochureRequestActive=false;
+    clearBrochureEnquiry();
+    this.reset();
+    toggleCustomCountryField();
+  }catch(error){
+    console.error(error);
+    alert('Sorry, your enquiry could not be sent. Please try again.');
+  }
 });
 
 enhanceCourseLinks();
